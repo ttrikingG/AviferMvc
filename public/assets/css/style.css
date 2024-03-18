@@ -1,0 +1,645 @@
+@font-face {
+  font-family: OpenSans-Medium;
+  src: url(../fonts/OpenSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: Capture-it;
+  src: url(../fonts/Capture-it.ttf);
+}
+
+body{
+  font-family:OpenSans-Medium;
+  margin-top: 106px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin-top: 74px;
+  }
+}
+
+button{
+  background-color: black;
+  color: snow;
+  border: none;
+  font-size: large;
+
+}
+
+button a{
+  text-decoration: none;
+  color: snow;
+
+}
+
+/*============Search Form=======*/
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  background-color: snow;
+  overflow: hidden;
+  margin-right: 1%;
+  width: 500px; /* Ajuste a largura conforme necessário */
+  position: relative;
+  
+}
+
+.search-input {
+  border-radius: 16px 0  0 16px;
+  border: none;
+  outline: none;
+  padding: 8px; /* Ajuste o padding conforme necessário */
+  flex: 1;
+}
+
+.search-button {
+  border: none;
+  background-color: yellow;
+  color: black;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px; /* Ajuste o padding conforme necessário */
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    width: 85%;
+  }
+}
+
+.telefone{
+  float: left;
+  text-decoration: none;
+  color: black;
+ padding-left: 1%;
+}
+
+.iconsusp{/*icones de redes sociais no topo do site*/
+  background-image: linear-gradient(to right,rgb(255, 235, 0), rgb(255, 255, 0), rgb(255, 255, 0));
+  max-width: 100%;
+  text-align: right;
+  padding-right: 1%;
+}
+
+.iconsusp img{
+  margin-top: 3px;
+  padding: 1px;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+  
+.iconsusp img:hover{
+  border: solid black;
+}
+
+ /*============Cabeçalho====================*/
+
+
+@media (max-width: 780px){
+  .textoLogo{
+      display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .iconsusp {
+      display: none;
+  }
+}
+
+.header-midle {
+  background-image: linear-gradient(to right,rgb(255, 235, 0), rgb(255, 255, 0), rgb(255, 255, 0));
+}
+
+@media (max-width: 780px){
+  .header-midle{
+      display: none;
+  }
+}
+
+
+/*navBar principal do site*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items:baseline;
+  /* background-image: linear-gradient(to right,rgb(255, 235, 0), rgb(255, 255, 0), rgb(255, 255, 0)); */
+  background-color: black;
+  box-shadow: black 2px 2px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que o navbar esteja acima de outros elementos */
+  /* Estilos adicionais para o navbar */
+}
+
+.navbar-links {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  z-index: 1;
+}
+.navbar-links.active {
+  display: flex;
+}
+
+.navbar-links a {
+  color: yellow;
+  text-decoration: none;
+  font-family: Capture-it;
+  font-size: 20px;
+}
+
+.navbar-links a:hover {
+  
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: yellow;
+  font-size: 1.9rem;
+  margin-left: 1%;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-links {
+      position: absolute;
+      top: 0;
+      left: -90%;
+      width: 90%;
+      height: 100vh;
+      background-image: linear-gradient(to right,rgb(36, 36, 34), rgb(57, 57, 53), rgb(78, 78, 69));
+      box-shadow: 6px 6px 12px;
+      transition: left 0.3s;
+      list-style: none; /* Remove as bolinhas */
+      padding: 0; /* Remove o espaçamento padrão */
+  }
+
+  .navbar-links.active {
+      left: 0;
+  }
+
+  .hamburger {
+      display: block;
+      margin-right: auto; /* Alinhamento à esquerda */
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items:baseline;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .navbar-brand {
+      display: none;
+  }
+
+  form {
+      display: flex;
+      align-items: center;
+  }
+
+  input[type="text"],
+  button[type="submit"] {
+      margin: 0;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navbar-links {
+      display: flex;
+  }
+  .navbar-links ul {
+      display: inline-block;
+  }
+  .navbar-links li {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 0;
+  }
+  form {
+      margin-left: auto;
+  }
+}
+
+/*Pagitation BUTTONS*/
+.pagination {
+    display: inline-block;
+}
+  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+  
+.pagination a.active {
+    background-color: cadetblue;
+    color: white;
+    border-radius: 5px;
+}
+  
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+/*Pagitation BUTTONS*/
+
+/*DropDown Menu do PERFIL BUTTON*/
+/* Estilo para o menu dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo para o botão dropdown */
+.dropbtn {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para o conteúdo do dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Estilo para os links do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Estilo para os links do dropdown quando passa o mouse por cima */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Exibir o dropdown quando passa o mouse por cima do botão */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Media query para dispositivos com largura menor que 600px */
+@media screen and (max-width: 600px) {
+  /* Ajuste o estilo do dropdown para dispositivos menores aqui */
+  .dropdown {
+      display: block;
+  }
+
+  .dropdown-content {
+      position: static;
+      display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+}
+
+/*estilação das tabelas*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid aliceblue;
+  text-align: left;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color:silver;
+}
+
+ /* Estilização da div que envolve o formulário */
+ .form-wrapper {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 80vh; /* Define a altura da div para ocupar toda a altura da tela */
+  margin: 0 auto; /* Centraliza a div na horizontal */
+  max-width: 600px; /* Define a largura máxima da div */
+  padding: 0 10px; /* Adiciona um espaçamento interno */
+}
+
+/* Estilização do formulário */
+.form-cadastro {
+  width: 100%; /* largura do formulário */
+  display: flex;
+  flex-direction: column; /* coloca os elementos do formulário em coluna */
+  align-items: center; /* Centraliza horizontalmente os elementos do formulário */
+}
+
+.form-cadastro input,
+.form-cadastro button {
+  margin-bottom: 10px; /* espaçamento entre os elementos */
+  padding: 5px; /* espaçamento interno */
+  border-radius: 5px; /* bordas arredondadas */
+  border: 1px solid #ccc; /* borda com cor cinza */
+  width: 100%; /* largura total */
+  box-sizing: border-box; /* inclui padding e borda na largura total */
+}
+
+.form-cadastro button {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form-cadastro button:hover {
+  background-color: darkgray; /* Altera a cor de fundo quando o botão é hover */
+}
+
+/*----------------------começo do slide----------------------*/
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: silver;
+  padding: 2px 16px;
+  color: black;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.demo:hover {
+  opacity: 1;
+}
+
+/*------------fim do slide-----------------------*/
+
+/*=================main do site=================*/
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+ 
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*=============card Product============*/
+.card-product {
+  margin: 0 5px 10px 5px; /* Adicionando espaçamento entre os cards */
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Estilo para a imagem do card */
+.card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o título do card */
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o subtítulo do card */
+.card-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+  .slick-slide {
+    display: inline-block;
+    width: calc(50% - 20px); /* 2 cards por linha com espaçamento */
+   
+  }
+
+  .card-product {
+    width: 100%; /* Card ocupa a largura total do slide */
+    margin: 0;
+  }
+}
+
+.mapa-local h1{
+  text-align: center;
+  color: #2e412a;
+}
+
+/*=====MenuProduct=======*/
+.menupdt h1{
+    text-align: center;
+    font-family: OpenSans-Medium;
+    color: #2e412a;
+}
+
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
+    padding: 0 2vw;
+    margin-bottom: 2%;   
+}
+
+.gallery-container-product{
+  text-align: center;
+  padding: 1%;
+}
+
+.gallery-container-product:hover{
+  box-shadow: silver 5px 5px 10px;
+}
+
+.gallery-container-product img{
+  width: auto;
+  height: 120px;
+}
+
+.container-banner{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
+    padding: 0 2vw;
+    margin-bottom: 2%;   
+  
+}
+
+.banner img{
+  width: 480px;
+  height: auto;
+  border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+  .banner img {
+    width: 160px;
+    height: auto;
+  }
+}
+
+.divAFooter{
+  background-image: linear-gradient(to right,rgb(255, 235, 0), rgb(255, 255, 0), rgb(255, 255, 0));
+  color: black;
+  font-family: Capture-it;
+  font-size: xx-large;
+  padding: 6px;
+}
+
+.footer-link a{ 
+  color: snow;
+}
+
+.menuiconsc img{
+  background-color: yellow; 
+  border-radius: 4px;
+}
